@@ -37,9 +37,9 @@ public class Seleniumtutorial {
                 if(data.length == 1){
                     continue;
                 }
-                WebElement make;
-                make = driver.findElement(By.id("inputEmail3"));
-                make.sendKeys(data[0]);
+//                WebElement make;
+//                make = 
+                driver.findElement(By.id("inputEmail3")).sendKeys(data[0]);
                 Thread.sleep(1000);
 
                 WebElement model;
@@ -81,6 +81,7 @@ public class Seleniumtutorial {
                 
                 WebElement resultparagraph;
                 resultparagraph = driver.findElement(By.id("resultpagereview"));
+                
                 String str = "The user selected the following input:\n"
                         + data[0] + " " + data[1] + " " + data[2] + "\n"
                         + "with GPS\n"
