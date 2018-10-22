@@ -37,9 +37,9 @@ public class Seleniumtutorial {
                 if(data.length == 1){
                     continue;
                 }
-//                WebElement make;
-//                make = 
-                driver.findElement(By.id("inputEmail3")).sendKeys(data[0]);
+                WebElement make;
+                make = driver.findElement(By.id("inputEmail3"));
+                make.sendKeys(data[0]);
                 Thread.sleep(1000);
 
                 WebElement model;
@@ -87,12 +87,12 @@ public class Seleniumtutorial {
                         + "with GPS\n"
                         + "accessories on " + Date[2] + "-" + Date[0] + "-" + Date[1] + "\n"
                         + "The user will get 30% discount.";
-                System.out.println(resultparagraph.getText().equals(str));
+               if(resultparagraph.getText().equals(str))
+                   System.out.println("true,testcase passed");
                 Thread.sleep(1000);
-                
                 driver.navigate().to("https://gdpexam.herokuapp.com/");
             } catch (Exception e) {
-                System.out.println("false");
+                System.out.println("false,testcase failed");
                 Alert alert = driver.switchTo().alert();
                 alert.accept();
                 driver.navigate().to("https://gdpexam.herokuapp.com/");
